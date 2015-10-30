@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>MarionetteJS</title>
+		<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body class="container">
+		
+		<header></header>
+				
+		<main></main>
+
+		<footer></footer>
+
+		<!-- templates -->
+		<script type="html/template" id="tpl_title">
+			<h2 class="header">Consultores</h2>
+		</script>
+
+		<script type="html/template" id="tpl_list">
+			<div class="collection"></div>
+			<a id="add" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
+		</script>
+
+		<script type="html/template" id="tpl_list_item">
+			<%=name%> <%=surname%> <%=age%>
+			<a class="secondary-content waves-effect waves-light btn btn-collection hrefRemove">
+				<i class="material-icons">delete</i>
+			</a>
+			<a class="secondary-content waves-effect waves-light btn btn-collection hrefEdit">
+				<i class="material-icons">edit</i>
+			</a>
+		</script>
+
+		<script type="html/template" id="tpl_list_empty">
+			<a class="collection-item">No existen Consultores.</a>
+		</script>
+		<!-- end templates -->
+
+		<!-- libs -->
+		<script src="lib/jquery.js"></script>
+		<script src="lib/underscore.js"></script>
+		<script src="lib/backbone.js"></script>
+		<script src="lib/backbone.localStorage.js"></script>
+		<script src="lib/marionette.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+		<!-- end libs -->
+
+		<script src="scripts/views/title.js"></script>
+		<script src="scripts/views/list.js"></script>
+		<script src="scripts/views/list_item.js"></script>
+		<script src="scripts/views/list_empty.js"></script>
+
+		<script src="scripts/models/consultant.js"></script>
+		<script src="scripts/collections/consultants.js"></script>
+		<script src="scripts/controllers/controller.js"></script>
+		<script src="scripts/routes/route.js"></script>
+		<script src="scripts/app.js"></script>
+	</body>
+</html>
