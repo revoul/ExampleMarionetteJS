@@ -10,9 +10,10 @@ app.Application = new Mn.Application({
 	},
 	initialize : function () {
 		app.Collection = new app.Consultants_Collection;
-		this.on('start', function () {
-			Backbone.history.start();
-		});
+		this._listens();
+	},
+	_listens : function () {
+		this.listenTo(this, 'start', function () {Backbone.history.start();});
 	}
 });
 

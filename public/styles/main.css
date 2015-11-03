@@ -31,3 +31,12 @@ label:after{
 label.active:after{
 	top:61px!important;
 }
+
+.pagination li{
+	padding: 0 8px;
+}
+
+.pagination .waves-effect:hover{
+	background-color: #26a69a; 
+}
+

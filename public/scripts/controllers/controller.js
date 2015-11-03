@@ -7,16 +7,26 @@ app.Controller = Mn.Controller.extend({
 		app.Application.head.show(new app.Title_View);
 	},
 	home : function () {
-		var _view = new app.List_View({
-			collection : app.Collection
-		});
-
-		app.Application.main.show(_view);
+		app.Application.main.show(
+			new app.List_View({
+				collection : app.Collection
+			})
+		);
 	},
-	add : function () {
-		console.log('add');
+	add_edit : function (_id) {
+		var _model = (!!_id) ? app.Collection.get(_id) : new app.Consultant_Model;
+		app.Application.main.show(
+			new app.Add_Edit_View({
+				model : _model
+			})
+		);
 	},
-	edit : function () {
-		console.log('edit');
+	search : function (_field){
+		app.Application.main.show(
+			new app.List_View({
+				collection : app.Collection,
+				_secondFilter : _field
+			})
+		);
 	}
 });
